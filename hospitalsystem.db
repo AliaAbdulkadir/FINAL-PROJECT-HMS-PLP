@@ -1,0 +1,21 @@
+CREATE DATABASE HospitalSystem;
+
+USE HospitalSystem;
+
+-- Table for doctors
+CREATE TABLE Doctors (
+    DoctorID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100),
+    Specialty VARCHAR(100),
+    Phone VARCHAR(15)
+);
+
+-- Table for patients
+CREATE TABLE Patients (
+    PatientID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT,
+    Illness VARCHAR(100),
+    DoctorID INT,
+    FOREIGN KEY (DoctorID) REFERENCES Doctors(DoctorID)
+);
